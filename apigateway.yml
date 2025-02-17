@@ -28,7 +28,7 @@ spring:
             - "*"
       routes:
         - id: chat
-          uri: lb:ws://CHAT
+          uri: http://localhost:8082
           predicates:
             - Path=/chat/**
           filters:
