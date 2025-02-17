@@ -15,6 +15,17 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+    globalcors:
+      corsConfigurations:
+        '[/**]':
+          allowedOrigins: "http://localhost:4200"
+          allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+          allowedHeaders:
+            - "*"
       # routes:
       #   - id: mi-servicio
       #     uri: lb://MISERVICIO  # Se resuelve automáticamente con Eureka
