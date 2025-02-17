@@ -33,3 +33,11 @@ spring:
             - Path=/chat/**
           filters:
             - StripPrefix=0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
