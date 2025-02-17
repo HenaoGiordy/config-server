@@ -28,11 +28,12 @@ spring:
             - "*"
         routes:
         - id: chat
-          uri: lb:ws://chat
+          uri: lb:ws://CHAT
           predicates:
             - Path=/chat/**
           filters:
             - StripPrefix=0
+            - RewritePath=/chat/(?<remaining>.*), /$\{remaining}
 management:
   endpoints:
     web:
