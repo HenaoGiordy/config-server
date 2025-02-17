@@ -26,8 +26,8 @@ spring:
             - DELETE
           allowedHeaders:
             - "*"
-      # routes:
-      #   - id: mi-servicio
-      #     uri: lb://MISERVICIO  # Se resuelve automáticamente con Eureka
-      #     predicates:
-      #       - Path=/miservicio/**
+  routes:
+        - id: chat
+          uri: lb://chat
+          predicates:
+            - Path=/chat/**
