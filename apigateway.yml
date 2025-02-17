@@ -14,7 +14,11 @@ spring:
       discovery:
         locator:
           enabled: true
-          lower-case-service-id: true
+      routes:
+        - id: chat
+          uri: http://localhost:8082
+          predicates:
+            - Path=/chat/**
     globalcors:
       corsConfigurations:
         '[/**]':
@@ -26,14 +30,7 @@ spring:
             - DELETE
           allowedHeaders:
             - "*"
-      routes:
-        - id: chat
-          uri: http://localhost:8082
-          predicates:
-            - Path=/chat/**
-          filters:
-            - StripPrefix=0
-            - RewritePath=/chat/(?<remaining>.*), /$\{remaining}
+
 management:
   endpoints:
     web:
