@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      # routes:
+      #   - id: mi-servicio
+      #     uri: lb://MISERVICIO  # Se resuelve automáticamente con Eureka
+      #     predicates:
+      #       - Path=/miservicio/**
