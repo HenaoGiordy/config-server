@@ -28,7 +28,7 @@ spring:
             - "*"
         routes:
         - id: chat
-          uri: lb:ws//chat
+          uri: lb:ws://chat
           predicates:
             - Path=/chat/**
           filters:
