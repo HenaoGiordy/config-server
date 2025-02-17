@@ -26,7 +26,7 @@ spring:
             - DELETE
           allowedHeaders:
             - "*"
-        routes:
+      routes:
         - id: chat
           uri: lb:ws://CHAT
           predicates:
