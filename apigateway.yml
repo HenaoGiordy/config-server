@@ -30,6 +30,6 @@ spring:
         - id: chat
           uri: lb:ws//chat
           predicates:
-            - Path=/ws/chat/**
+            - Path=/chat/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=0
